@@ -4,7 +4,7 @@ import java.util.Calendar;
 
 public class Greeting {
 	
-	public String getGreeting( Language language, Calendar calendar ) {
+	public String getGreeting( Language language, Calendar calendar , Message Message) {
 		// Get current hour
 		int hour = calendar.get( Calendar.HOUR_OF_DAY );
 		
