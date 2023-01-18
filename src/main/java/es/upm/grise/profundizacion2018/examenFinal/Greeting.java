@@ -1,17 +1,19 @@
 package es.upm.grise.profundizacion2018.examenFinal;
 
-import java.util.Calendar;
+//import java.util.Calendar;
 
 public class Greeting {
 	
-	public String getGreeting( Language language ) {
+//	public String getGreeting( Language language ) {
+	public String getGreeting( Language language, MyCalendar calendar, Message message ) {
 		// Get current hour
-		Calendar calendar = Calendar.getInstance();
-		int hour = calendar.get( Calendar.HOUR_OF_DAY );
+		//Calendar calendar = Calendar.getInstance(); 
+		//int hour = calendar.get( calendar.HOUR_OF_DAY );
+		int hour = calendar.getHourOfTheDay();
 		
 		// Find out the greeting language
 		if ( language == null )
-			language = Message.getDefaultLanguage();
+			language = message.getDefaultLanguage();
 		
 		// Get the moment of the day
 		TimeOfTheDay moment;
@@ -23,7 +25,8 @@ public class Greeting {
 			moment = TimeOfTheDay.EVENING;
 			
 		// Return the message		
-		return Message.getMessage( moment, language );
+		//return Message.getMessage( moment, language );
+		return message.getMessage( moment, language);
 	}
 
 }
